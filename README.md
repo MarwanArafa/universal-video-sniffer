@@ -1,6 +1,6 @@
 # 🎥 Universal Video Sniffer & Downloader
 
-#### Video Demo:  <INSERT_YOUR_YOUTUBE_LINK_HERE>
+#### Enter video URL: :  <INSERT_YOUR_YOUTUBE_LINK_HERE>
 #### Description:
 A powerful, Python-based video downloader engine capable of detecting and downloading streams from complex websites (YouTube, Twitter/X, Pornhub, TopCinema, etc.). Unlike standard downloaders that rely on static HTML parsing, this project uses a **Network Sniffing Engine** (Selenium) to intercept browser traffic, capture authentication cookies, and detect encrypted HLS streams (`.m3u8`).
 
