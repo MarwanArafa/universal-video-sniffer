@@ -8,15 +8,11 @@ from unittest.mock import patch
 def test_is_valid_url():
     # 1. Twitter / X
     assert is_valid_url("https://x.com/ElonMusk/status/123456789") == True
-    # 2. Pornhub
-    assert is_valid_url("https://www.pornhub.com/view_video.php?viewkey=ph12345") == True
-    # 3. YouTube
+    # 2. YouTube
     assert is_valid_url("https://www.youtube.com/watch?v=dQw4w9WgXcQ") == True
-    # 4. TikTok
+    # 3. TikTok
     assert is_valid_url("https://www.tiktok.com/@user/video/7891011") == True
-    # 5. TopCinema
-    assert is_valid_url("https://topcinema.cam/suits-season-9") == True
-    
+
     # Negative Test
     assert is_valid_url("ftp://not-supported.com") == False
 
@@ -55,7 +51,7 @@ def test_ask_format_input(monkeypatch):
 def test_is_video_stream_url():
     # Direct files
     assert is_video_stream_url("http://site.com/video.mp4") == True
-    # HLS Streams (Pornhub/TopCinema use this)
+    # HLS Streams
     assert is_video_stream_url("https://cdn.site.com/master.m3u8") == True
     assert is_video_stream_url("https://cdn.site.com/segment01.ts") == True
     # Not video
