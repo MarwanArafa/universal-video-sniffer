@@ -28,9 +28,7 @@ Universal Video Sniffer & Downloader is a Python-based tool that can detect and 
 - Google Chrome browser
 - Git (for cloning the repository)
 
-### Step-by-Step Setup
-
-#### 1. Clone the Repository
-```bash
-git clone [https://github.com/MarwanArafa/universal-video-sniffer.git](https://github.com/MarwanArafa/universal-video-sniffer.git)
-cd universal-video-sniffer
+### 📖 How to Use
+1.  Run `python project.py`
+2.  Paste the URL.
+3.  **Important:** If the browser opens, **do not close it**. Click "Accept Cookies" or "Play" to help the sniffer find the video.
