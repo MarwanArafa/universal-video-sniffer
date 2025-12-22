@@ -1,39 +1,36 @@
 # 🎥 Universal Video Sniffer & Downloader
 
-**CS50P Final Project**  
-*Marwan Arafa* · December 2025  
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![CS50P](https://img.shields.io/badge/CS50P-Final_Project-yellow.svg)
 
-[Demo Video (to be added after recording – under 3 minutes)](https://youtube.com/link-to-your-video)  
+> **⚠️ Legal Disclaimer:** This tool is for **educational purposes only**. Use only on content you own or have permission to download. You are responsible for any consequences, including account bans or legal actions.
 
-> A powerful CLI tool that downloads **any video** just by pasting its link — from YouTube, Twitter/X, Instagram, Reddit, Vimeo, Dailymotion, or **any website** with an embedded video.  
-> Future enhancement: If a page has multiple videos, the app will prompt you to select which one.
+## 📌 Overview
 
-## 📖 Description
+Universal Video Sniffer & Downloader is a Python-based tool that can detect and download video streams from various platforms using browser automation and smart stream detection. It was developed as a **final project for Harvard's CS50P** (CS50's Introduction to Programming with Python).
 
-This project uses a **network sniffing engine** (Selenium) to detect hidden streams, capture cookies, and download videos that standard tools can't handle. It stitches HLS segments with FFmpeg and supports MP4 or MP3.
+## ✨ Features
 
-**Why it's universal:** No site-specific code—works on JavaScript-heavy or protected sites.
-
-## 🚀 Features
-
-- 🌐 Works on any video link (YouTube, Twitter/X, Instagram, Reddit, etc.)
-- 🔍 Sniffs hidden `.m3u8` or direct streams
-- 🛡️ Bypasses restrictions via real browser + cookies
-- 🎞️ MP4 or MP3 output
-- 📝 Auto-cleaned filenames from page title
+- **🕵️‍♂️ Smart Stream Detection**: Automatically detects video streams using Selenium browser automation
+- **🌐 Multi-Platform Support**: Works with YouTube, Twitter/X, TikTok, Facebook, Vimeo, Dailymotion, Archive.org, and more
+- **📁 Dual Output Formats**: Download as MP4 (video+audio) or MP3 (audio only)
+- **🎯 Intelligent Download Engine**: Automatically switches between direct download and FFmpeg streaming
+- **🍪 Cookie Handling**: Preserves session cookies for authenticated content
+- **🔧 Safe Filename Generation**: Automatically cleans and truncates filenames
+- **📊 Progress Tracking**: Real-time download progress with `tqdm`
 
 ## 🛠️ Installation
 
-### System Requirements
+### Prerequisites
+- Python 3.8 or higher
+- FFmpeg installed on your system
 - Google Chrome browser
-- FFmpeg (for stitching and MP3 conversion)  
-  Download: https://ffmpeg.org/download.html  
+- Git (for cloning the repository)
 
-  Quick install commands:
+### Step-by-Step Setup
 
-![Installation Commands Screenshot](screenshot_install.png)  
-*(Your screenshot showing FFmpeg install options and pip command)*
-
-### Python Dependencies
+#### 1. Clone the Repository
 ```bash
-pip install -r requirements.txt
+git clone [https://github.com/MarwanArafa/universal-video-sniffer.git](https://github.com/MarwanArafa/universal-video-sniffer.git)
+cd universal-video-sniffer
