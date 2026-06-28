@@ -4,62 +4,114 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![CS50P](https://img.shields.io/badge/CS50P-Final_Project-yellow.svg)
 
-> **⚠️ Legal Disclaimer:** This tool is for **educational purposes only**. Use only on content you own or have permission to download. You are responsible for any consequences, including account bans or legal actions.
+> ⚠️ **Legal Notice:** This tool is for **educational purposes only**. Only download content you own or have permission to download. You are fully responsible for how you use it.
+
+---
 
 ## 📺 Video Demo
-**[Watch the Demo Here](<INSERT_YOUR_YOUTUBE_LINK_HERE>)** *(Description: A walkthrough of the tool functionality)*
+**[Watch the Demo Here](https://github.com/MarwanArafa/universal-video-sniffer)** *(coming soon)*
 
-## 📌 Overview
-Universal Video Sniffer & Downloader is a Python-based tool that can detect and download video streams from various platforms using browser automation and smart stream detection. It was developed as a **final project for Harvard's CS50P** (CS50's Introduction to Programming with Python).
+---
+
+## 📌 What does it do?
+
+You paste a video URL. It downloads the video to your computer as MP4 or MP3. That's it.
+
+It works by scanning the page for the actual video stream — the same stream your browser plays — and downloads it directly.
+
+---
+
+## 💻 Supported Platforms
+
+| Site | Status |
+|---|---|
+| Most video platforms | ✅ Fast direct extraction (flashvars-based) |
+| YouTube | 🔄 Browser scan fallback |
+| Twitter / X | 🔄 Browser scan fallback |
+| TikTok | 🔄 Browser scan fallback |
+| Vimeo | 🔄 Browser scan fallback |
+| Most other sites | 🔄 Browser scan fallback |
+
+---
+
+## 🛠️ Installation (do this once)
+
+### Step 1 — Make sure you have Python
+Open a terminal and run:
+```
+python --version
+```
+You need Python 3.8 or higher. If you don't have it, download it from [python.org](https://python.org).
+
+### Step 2 — Install FFmpeg
+FFmpeg is a free tool that handles video/audio processing. You need it.
+
+- **Windows:** Download from [ffmpeg.org](https://ffmpeg.org/download.html), extract it, and add the `bin` folder to your PATH.
+- **Mac:** Run `brew install ffmpeg` in Terminal (requires [Homebrew](https://brew.sh)).
+- **Linux:** Run `sudo apt install ffmpeg` or `sudo pacman -S ffmpeg`.
+
+To verify it works, run: `ffmpeg -version`
+
+### Step 3 — Install Google Chrome
+Make sure Google Chrome is installed on your system. The tool uses it for sites that need a browser to find the video.
+
+### Step 4 — Install Python dependencies
+In the project folder, run:
+```
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ How to Use
+
+Run this in the project folder:
+```
+python project.py
+```
+
+Then:
+1. Paste the video URL when asked
+2. Choose MP4 (video) or MP3 (audio only)
+3. Wait — a progress bar will show the download
+4. Find your file in the `downloads/` folder
+
+---
 
 ## 📁 Project Structure
-- `project.py`: The main entry point. Handles user input, logic validation, and filename generation.
-- `webpage_scanner.py`: Uses Selenium to open a browser and "sniff" network traffic for video URLs.
-- `video_downloader.py`: The engine that handles the actual downloading via HTTP streams or FFmpeg.
-- `test_project.py`: Contains unit tests for `project.py` functions using `pytest`.
-- `requirements.txt`: Lists all Python dependencies.
 
-## ✨ Features
-- **🕵️‍♂️ Smart Stream Detection**: Automatically detects video streams using Selenium browser automation
-- **🌐 Multi-Platform Support**: Works with YouTube, Twitter/X, TikTok, Facebook, Vimeo, Dailymotion, Archive.org, and more
-- **📁 Dual Output Formats**: Download as MP4 (video+audio) or MP3 (audio only)
-- **🎯 Intelligent Download Engine**: Automatically switches between direct download and FFmpeg streaming
-- **🍪 Cookie Handling**: Preserves session cookies for authenticated content
-- **🔧 Safe Filename Generation**: Automatically cleans and truncates filenames
-- **📊 Progress Tracking**: Real-time download progress with `tqdm`
+| File | What it does |
+|---|---|
+| `project.py` | Main entry point — handles user input and flow |
+| `webpage_scanner.py` | Finds the video stream URL from a page |
+| `video_downloader.py` | Downloads the stream using FFmpeg or direct HTTP |
+| `url_utils.py` | URL validation helpers |
+| `test_project.py` | Automated tests (run with `pytest`) |
+| `requirements.txt` | Python dependencies |
 
-## 🛠️ Installation
+---
 
-### Prerequisites
-- Python 3.8 or higher
-- FFmpeg installed on your system
-- Google Chrome browser
+## ❓ Troubleshooting
 
-### Setup
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/MarwanArafa/universal-video-sniffer.git](https://github.com/MarwanArafa/universal-video-sniffer.git)
-   cd universal-video-sniffer
+**"FFmpeg not installed"** → Go back to Step 2 above.
 
-2. Install Dependencies:
-```bash
-    pip install -r requirements.txt
-```
+**"Could not detect any video stream"** → The site may use heavy anti-bot protection. Try a different URL or a different video.
 
-## 📖 How to Use
+**Download stops or is slow** → Normal for large videos. The progress bar shows time remaining.
 
-- Run the program:
-```bash
-python project.py # Paste the URL when prompted.
-```
+**File saved but won't play** → Make sure you chose MP4. Some sites only provide HLS streams which need FFmpeg to assemble — this is handled automatically.
 
-***Important: If the browser opens, do not close it. Click "Accept Cookies" or "Play" to help the sniffer find the video.***
+---
 
+## 🔮 Planned Features
+- Quality selector (1080p / 720p / 480p)
+- Playlist/batch download
+- Built-in site extractors for YouTube, Twitter, TikTok
+- GUI version
 
-### **One Last Step**
-- Make sure you create a `requirements.txt` file in your folder if you haven't already! The grader needs this to run your code.
+---
 
-## Run this command in your terminal to generate it automatically:
-```bash
-pip freeze > requirements.txt
-```
+## 👤 Author
+**Marwan Arafa** — [GitHub](https://github.com/MarwanArafa) | [Portfolio](https://marwan-dev.me)
+
+*Final project for Harvard's CS50P — Introduction to Programming with Python*
