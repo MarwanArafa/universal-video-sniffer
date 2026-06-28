@@ -188,12 +188,8 @@ def extract_with_selenium(webpage_url: str) -> Tuple[Optional[str], Dict, str, s
 # Main router — add new site extractors here in the future
 # ---------------------------------------------------------------------------
 
-FLASHVARS_DOMAINS = [
-    "pornhub.com",
-    "redtube.com",
-    "youporn.com",
-    "tube8.com",
-]
+# Add domains that use flashvars-based video embedding here
+FLASHVARS_DOMAINS = []
 
 SITE_EXTRACTORS = {domain: extract_flashvars_site for domain in FLASHVARS_DOMAINS}
 
